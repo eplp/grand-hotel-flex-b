@@ -1,0 +1,16 @@
+* {
+   box-sizing: border-box; /** includes padding and border in total width and height */
+}
+
+html {
+   /** default font size is 16px, but we want to use 10px instead --- 10 / 16 = 0.625 = 62.5% */
+   font-size: 62.5%;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Montserrat', sans-serif;
+}
+
+
