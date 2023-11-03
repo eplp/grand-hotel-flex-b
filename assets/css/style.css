@@ -1,3 +1,4 @@
+/** common styles */
 * {
    box-sizing: border-box; /** includes padding and border in total width and height */
 }
@@ -12,5 +13,7 @@ body {
    padding: 0;
    font-family: 'Montserrat', sans-serif;
 }
+
+/** end of common styles */
 
 
