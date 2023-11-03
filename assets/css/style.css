@@ -1,15 +1,15 @@
 /** common styles */
 :root {
-   --background-color: #eee;
-   --dark-background-color: #222;
+   --sidebar-bckg-color: #eee;
+   --sidebar-dark-bckg-color: #222;
 }
 html {
-   /** default font size is 16px, but we want to use 10px instead --- 10 / 16 = 0.625 = 62.5% */
+   /** default font size:16px, we want to use 10px instead: 10 / 16 = 0.625 = 62.5% */
    font-size: 62.5%;
 }
 
 * {
-   box-sizing: border-box; /** includes padding and border in total width and height */
+   box-sizing: border-box; /* includes padding and border in total width and height */
 }
 
 body {
@@ -23,18 +23,29 @@ body {
 /** sidebar */
 .sidebar {
    width: 8rem;
-   height: 100%; /** sidebar will strecht across the whole page */
-   background-color: var(--background-color);
-   position: fixed; /** always visible when we scroll up/down */
-   display: flex; /** makes sidebar container flex*/
-   flex-direction: column; /** main direction is column */
-   justify-content: space-between; /** aligns menu, soc-media, and year to use all the available vertical space */
+   height: 100%; /* sidebar will strecht across the whole page */
+   background-color: var(--sidebar-bckg-color);
+   position: fixed; /* always visible when we scroll up/down */
+   display: flex; /* sidebar container is flex*/
+   flex-direction: column;
+   justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
+   align-items: center; /* align icons vertically to the center (flex-direction:column)*/
 }
 
+/** styles menu icon */
 .menu-icon {
-   width: 2rem;
-   height: 2rem;
-   background-color: var(--dark-background-color);
+   /* height: 0.2rem;
+   width: 2.5rem; */
+   /* background-color: var(--sidebar-dark-bckg-color); */
+   margin-top: 3rem; /* adds some space from the top */
+   cursor: pointer; /** controls cursor appearance on an element */
+}
+
+.line {
+   height: 0.2rem;
+   width: 2.5rem;
+   background-color: var(--sidebar-dark-bckg-color);
+   margin-bottom: .6rem; /* to separate the menu lines */
 }
 
 /** end of sidebar */
