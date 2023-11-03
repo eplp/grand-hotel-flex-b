@@ -1,19 +1,41 @@
 /** common styles */
-* {
-   box-sizing: border-box; /** includes padding and border in total width and height */
+:root {
+   --background-color: #eee;
+   --dark-background-color: #222;
 }
-
 html {
    /** default font size is 16px, but we want to use 10px instead --- 10 / 16 = 0.625 = 62.5% */
    font-size: 62.5%;
 }
 
+* {
+   box-sizing: border-box; /** includes padding and border in total width and height */
+}
+
 body {
    margin: 0;
    padding: 0;
-   font-family: 'Montserrat', sans-serif;
+   font-family: "Montserrat", sans-serif;
 }
-
 /** end of common styles */
 
+/** navbar */
+/** sidebar */
+.sidebar {
+   width: 8rem;
+   height: 100%; /** sidebar will strecht across the whole page */
+   background-color: var(--background-color);
+   position: fixed; /** always visible when we scroll up/down */
+   display: flex; /** makes sidebar container flex*/
+   flex-direction: column; /** main direction is column */
+   justify-content: space-between; /** aligns menu, soc-media, and year to use all the available vertical space */
+}
 
+.menu-icon {
+   width: 2rem;
+   height: 2rem;
+   background-color: var(--dark-background-color);
+}
+
+/** end of sidebar */
+/** end of navbar */
