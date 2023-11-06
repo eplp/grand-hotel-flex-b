@@ -23,9 +23,9 @@ body {
 /** sidebar */
 .sidebar {
    width: 8rem;
-   height: 100%; /* sidebar will strecht across the whole page */
+   height: 100%; /** sidebar will strecht across the whole page */
    background-color: var(--sidebar-bckg-color);
-   position: fixed; /* always visible when we scroll up/down */
+   position: fixed; /** always visible when we scroll up/down */
    display: flex; /* sidebar container is flex*/
    flex-direction: column;
    justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
@@ -89,6 +89,9 @@ body {
 .navigation {
    margin-left: 8rem; /** pulls navigation to the right from sidebar */
    position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
+   width: 40rem;
+   height: 100%;     /** sidebar will strecht across the whole page */
+background-image: url(..);
 }
 
 /** end of navigation*/
