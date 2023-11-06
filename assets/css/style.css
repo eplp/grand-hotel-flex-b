@@ -1,16 +1,87 @@
-* {
-   box-sizing: border-box; /** includes padding and border in total width and height */
+/** common styles */
+:root {
+   --sidebar-bckg-color: #eee;
+   --sidebar-dark-bckg-color: #222;
+}
+html {
+   /** default font size:16px, we want to use 10px instead: 10 / 16 = 0.625 = 62.5% */
+   font-size: 62.5%;
 }
 
-html {
-   /** default font size is 16px, but we want to use 10px instead --- 10 / 16 = 0.625 = 62.5% */
-   font-size: 62.5%;
+* {
+   box-sizing: border-box; /* includes padding and border in total width and height */
 }
 
 body {
    margin: 0;
    padding: 0;
-   font-family: 'Montserrat', sans-serif;
+   font-family: "Montserrat", sans-serif;
+}
+/** end of common styles */
+
+/** navbar */
+/** sidebar */
+.sidebar {
+   width: 8rem;
+   height: 100%; /* sidebar will strecht across the whole page */
+   background-color: var(--sidebar-bckg-color);
+   position: fixed; /* always visible when we scroll up/down */
+   display: flex; /* sidebar container is flex*/
+   flex-direction: column;
+   justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
+   align-items: center; /* align icons vertically to the center (flex-direction:column)*/
 }
 
+/** styles menu icon */
+.menu-icon {
+   /* height: 0.2rem; */ /* initial placeholder */
+   /* width: 2.5rem; */
+   /* background-color: var(--sidebar-dark-bckg-color); */
+   margin-top: 3rem; /* adds some space from the top */
+   cursor: pointer; /** controls cursor appearance on an element */
+}
 
+.line {
+   height: 0.2rem;
+   width: 2.5rem;
+   background-color: var(--sidebar-dark-bckg-color);
+   margin-bottom: 0.6rem; /** to separate the menu lines */
+}
+
+.line-1,
+.line-3 {
+   width: 1.8rem;
+   transition: width 0.3s;
+}
+
+.menu-icon:hover .line {
+   width: 2.5rem;
+}
+
+.social-icons-list {
+   list-style-type: none;
+   padding: 0; /** aligns social media icons to the center */
+   height: 25rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.social-link {
+   font-size: 2rem;
+   color: #777;
+   transition: color 0.3s;
+}
+
+.social-link:hover {
+   color: #deaa86;
+}
+
+.year {
+   margin-bottom: 1rem;
+   font-size: 1.5rem;
+   color: #555;
+}
+/** end of sidebar */
+/** end of navbar */
