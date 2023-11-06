@@ -84,4 +84,13 @@ body {
    color: #555;
 }
 /** end of sidebar */
+
+/** navigation */
+.navigation {
+   margin-left: 8rem; /** pulls navigation to the right from sidebar */
+   position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
+}
+
+/** end of navigation*/
+
 /** end of navbar */
