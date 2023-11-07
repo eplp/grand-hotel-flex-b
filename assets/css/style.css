@@ -23,9 +23,9 @@ body {
 /** sidebar */
 .sidebar {
    width: 8rem;
-   height: 100%; /* sidebar will strecht across the whole page */
+   height: 100%; /** sidebar will strecht across the whole page */
    background-color: var(--sidebar-bckg-color);
-   position: fixed; /* always visible when we scroll up/down */
+   position: fixed; /** always visible when we scroll up/down */
    display: flex; /* sidebar container is flex*/
    flex-direction: column;
    justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
@@ -71,7 +71,7 @@ body {
 .social-link {
    font-size: 2rem;
    color: #777;
-   transition: color 0.3s;
+   transition: color 0.3s; /** note that the transition is NOT in the pseudo-class */
 }
 
 .social-link:hover {
@@ -84,4 +84,140 @@ body {
    color: #555;
 }
 /** end of sidebar */
+
+/** navigation */
+.navigation {
+   margin-left: 8rem; /** pulls navigation to the right from sidebar */
+   position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
+   width: 40rem;
+   height: 100%; /** navbar will strecht across the whole page */
+   background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),
+      url(/assets/images/nav-bg.jpeg);
+   background-position: center;
+   background-repeat: no-repeat;
+
+   background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),
+      url("/assets/images/nav-bg.jpeg") center no-repeat; /** shorthand for previous three lines */
+   background-size: cover;
+   /** copied from sidebar*/
+   display: flex; /* sidebar container is flex*/
+   flex-direction: column;
+   justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
+   align-items: center; /* align icons vertically to the center (flex-direction:column)*/
+}
+
+.navigation-heading {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 3.5rem;
+   font-weight: 300;
+   letter-spacing: 0.2rem;
+   color: #deaa86;
+   text-align: center;
+}
+
+.navigation-search {
+   position: relative;
+}
+
+.navigation-search-input {
+   width: 30rem;
+   padding: 1rem 2rem;
+   background-color: rgba(0, 0, 0, 0.3);
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 1.6rem;
+   color: #deaa86;
+   letter-spacing: 0.1rem;
+   outline: none;
+   border: 0.1rem solid #555;
+   border-radius: 10rem;
+   transition: background-color 0.3s; /** note that the transition is NOT in the pseudo-class */
+}
+
+.navigation-search-input:focus {
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navigation-search-btn {
+   border: none;
+   background-color: transparent;
+   color: #deaa86;
+   font-size: 1.7rem;
+   position: absolute; /** note position:relative of parent .navigation-search*/
+   top: 1rem; /** these two lines putthe search icon inside the input field */
+   right: 1rem;
+   cursor: pointer;
+}
+
+.navigation-search-btn:focus {
+   outline: none;
+}
+
+.navigation-list {
+   list-style-type: none;
+   padding: 0;
+   height: 28rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navigation-item {
+   position: relative;
+}
+
+.navigation-link {
+   color: #fff;
+   font-size: 1.6rem;
+   font-weight: 400;
+   letter-spacing: 0.1rem;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+
+/** adds pseudo-element for effect */
+.navigation-link::before {
+   content: ""; /** clears pseudo-element before */
+   /* width: 3rem; */
+   width: 0rem;
+   height: 0.1rem;
+   background-color: #deaa86;
+   /** the following three lines work together */
+   position: absolute;
+   top: 1rem;
+   left: -4rem;
+   transition: width 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+/** adds pseudo-element for effect */
+.navigation-link::after {
+   content: ""; /** clears pseudo-element after */
+   /* width: 3rem; */
+   width: 0rem;
+   height: 0.1rem;
+   background-color: #deaa86;
+   /** the following three lines work together */
+   position: absolute;
+   top: 1rem;
+   right: -4rem;
+   transition: width 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.navigation-link:hover {
+   color: #deaa86;
+}
+
+/** note pseudo-class and pseudo-element working together */
+.navigation-link:hover::before,
+.navigation-link:hover::after {
+   width: 3rem;
+}
+
+.copyright {
+   color: white;
+   font-size: 1.2rem;
+   margin-bottom: 1.5rem;
+}
+/** end of navigation*/
+
 /** end of navbar */
