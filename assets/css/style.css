@@ -120,7 +120,7 @@ body {
 }
 
 .navigation-search-input {
-   width: 30 rem;
+   width: 30rem;
    padding: 1rem 2rem;
    background-color: rgba(0, 0, 0, 0.3);
    font-family: "Josefin Sans", sans-serif;
@@ -150,6 +150,25 @@ body {
 
 .navigation-search-btn:focus {
    outline: none;
+}
+
+.navigation-list {
+   list-style-type: none;
+   padding: 0;
+   height: 28rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navigation-link {
+   color: #fff;
+   font-size: 1.6rem;
+   font-weight: 400;
+   letter-spacing: 0.1rem;
+   text-transform: uppercase;
+   text-decoration: none;
 }
 /** end of navigation*/
 
