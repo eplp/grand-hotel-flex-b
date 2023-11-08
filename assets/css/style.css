@@ -30,6 +30,7 @@ body {
    flex-direction: column;
    justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
    align-items: center; /* align icons vertically to the center (flex-direction:column)*/
+   z-index: 10; /** brings sidebar on top of navigation */
 }
 
 /** styles menu icon */
@@ -51,7 +52,8 @@ body {
 .line-1,
 .line-3 {
    width: 1.8rem;
-   transition: width 0.3s;
+   /* transition: width 0.3s; */ /* original hamburger menu */
+   transition: all 0.3s;
 }
 
 .menu-icon:hover .line {
@@ -87,7 +89,10 @@ body {
 
 /** navigation */
 .navigation {
-   margin-left: 8rem; /** pulls navigation to the right from sidebar */
+   /* margin-left: 8rem; /** pulls navigation to the right from sidebar */
+   /**  commented margin-left now that we want to hide navigation behind sidebar with the following line */
+   /** (intends to) hides navigation behind sidebar, but because ity is defined after sidebar, then sidebar is behind (fix sidebar order with z-index */
+   left: -32rem;
    position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
    width: 40rem;
    height: 100%; /** navbar will strecht across the whole page */
@@ -104,6 +109,8 @@ body {
    flex-direction: column;
    justify-content: space-between; /* aligns menu, soc-media, and year to use all the available vertical space */
    align-items: center; /* align icons vertically to the center (flex-direction:column)*/
+   /** transition for displayimg navigation on click event */
+   transition: left 0.8s cubic-bezier(1, 0, 0, 1);
 }
 
 .navigation-heading {
@@ -142,8 +149,10 @@ body {
    background-color: transparent;
    color: #deaa86;
    font-size: 1.7rem;
-   position: absolute; /** note position:relative of parent .navigation-search*/
-   top: 1rem; /** these two lines putthe search icon inside the input field */
+   /** note position:relative of parent .navigation-search*/
+   position: absolute;
+   /** these two lines putthe search icon inside the input field */
+   top: 1rem;
    right: 1rem;
    cursor: pointer;
 }
@@ -177,7 +186,7 @@ body {
 
 /** adds pseudo-element for effect */
 .navigation-link::before {
-   content: ""; /** clears pseudo-element before */
+   content: ""; /** clears pseudo-element "before" */
    /* width: 3rem; */
    width: 0rem;
    height: 0.1rem;
@@ -191,7 +200,7 @@ body {
 
 /** adds pseudo-element for effect */
 .navigation-link::after {
-   content: ""; /** clears pseudo-element after */
+   content: ""; /** clears pseudo-element "after" */
    /* width: 3rem; */
    width: 0rem;
    height: 0.1rem;
@@ -218,6 +227,30 @@ body {
    font-size: 1.2rem;
    margin-bottom: 1.5rem;
 }
+
+/** use this CSS combinator: "~" - general sibling selector to dhow navigation */
+.checkbox:checked ~ .navigation {
+   left: 8rem;
+}
+
+.checkbox:checked ~ .sidebar .line-1 {
+   /** rotates and moves line-1 to form the X */
+   transform: rotate(-405deg) translate(-5px, 6px);
+   width: 2.5rem; /** increases width to get same size like when hovering */
+/** hide checkbox using html property hidden OR CSS display:none */
+}
+
+.checkbox:checked ~ .sidebar .line-2 {
+   opacity: 0; /** hide line-2 */
+}
+
+.checkbox:checked ~ .sidebar .line-3 {
+   /** rotates and moves line-3 to form the X */
+   transform: rotate(405deg) translate(-5px, -6px);
+   width: 2.5rem; /** increases width to get same size like when hovering */
+   /** hide checkbox using html property hidden OR CSS display:none */
+}
+
 /** end of navigation*/
 
 /** end of navbar */
