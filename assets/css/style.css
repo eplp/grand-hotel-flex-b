@@ -1,7 +1,11 @@
 /** common styles */
 :root {
+   --sidebar-width: 8rem;
    --sidebar-bckg-color: #eee;
    --sidebar-dark-bckg-color: #222;
+   --theme-color: #deaa86;
+   --social-link-color: #777;
+   --year-color: #555;
 }
 html {
    /** default font size:16px, we want to use 10px instead: 10 / 16 = 0.625 = 62.5% */
@@ -22,7 +26,7 @@ body {
 /** navbar */
 /** sidebar */
 .sidebar {
-   width: 8rem;
+   width: var(--sidebar-width);
    height: 100%; /** sidebar will strecht across the whole page */
    background-color: var(--sidebar-bckg-color);
    position: fixed; /** always visible when we scroll up/down */
@@ -72,24 +76,24 @@ body {
 
 .social-link {
    font-size: 2rem;
-   color: #777;
+   color: var(--social-link-color);
    transition: color 0.3s; /** note that the transition is NOT in the pseudo-class */
 }
 
 .social-link:hover {
-   color: #deaa86;
+   color: var(--theme-color);
 }
 
 .year {
    margin-bottom: 1rem;
    font-size: 1.5rem;
-   color: #555;
+   color: var(--year-color);
 }
 /** end of sidebar */
 
 /** navigation */
 .navigation {
-   /* margin-left: 8rem; /** pulls navigation to the right from sidebar */
+   /* margin-left: var(--sidebar-width); /** pulls navigation to the right from sidebar */
    /**  commented margin-left now that we want to hide navigation behind sidebar with the following line */
    /** (intends to) hides navigation behind sidebar, but because ity is defined after sidebar, then sidebar is behind (fix sidebar order with z-index */
    left: -32rem;
@@ -118,7 +122,7 @@ body {
    font-size: 3.5rem;
    font-weight: 300;
    letter-spacing: 0.2rem;
-   color: #deaa86;
+   color: var(--theme-color);
    text-align: center;
 }
 
@@ -132,7 +136,7 @@ body {
    background-color: rgba(0, 0, 0, 0.3);
    font-family: "Josefin Sans", sans-serif;
    font-size: 1.6rem;
-   color: #deaa86;
+   color: var(--theme-color);
    letter-spacing: 0.1rem;
    outline: none;
    border: 0.1rem solid #555;
@@ -147,7 +151,7 @@ body {
 .navigation-search-btn {
    border: none;
    background-color: transparent;
-   color: #deaa86;
+   color: var(--theme-color);
    font-size: 1.7rem;
    /** note position:relative of parent .navigation-search*/
    position: absolute;
@@ -190,7 +194,7 @@ body {
    /* width: 3rem; */
    width: 0rem;
    height: 0.1rem;
-   background-color: #deaa86;
+   background-color: var(--theme-color);
    /** the following three lines work together */
    position: absolute;
    top: 1rem;
@@ -204,7 +208,7 @@ body {
    /* width: 3rem; */
    width: 0rem;
    height: 0.1rem;
-   background-color: #deaa86;
+   background-color: var(--theme-color);
    /** the following three lines work together */
    position: absolute;
    top: 1rem;
@@ -213,7 +217,7 @@ body {
 }
 
 .navigation-link:hover {
-   color: #deaa86;
+   color: var(--theme-color);
 }
 
 /** note pseudo-class and pseudo-element working together */
@@ -230,14 +234,14 @@ body {
 
 /** use this CSS combinator: "~" - general sibling selector to dhow navigation */
 .checkbox:checked ~ .navigation {
-   left: 8rem;
+   left: var(--sidebar-width);
 }
 
 .checkbox:checked ~ .sidebar .line-1 {
    /** rotates and moves line-1 to form the X */
    transform: rotate(-405deg) translate(-5px, 6px);
    width: 2.5rem; /** increases width to get same size like when hovering */
-/** hide checkbox using html property hidden OR CSS display:none */
+   /** hide checkbox using html property hidden OR CSS display:none */
 }
 
 .checkbox:checked ~ .sidebar .line-2 {
