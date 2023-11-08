@@ -256,5 +256,14 @@ body {
 }
 
 /** end of navigation*/
-
 /** end of navbar */
+
+/** header */
+
+.header {
+   margin-left: var(--sidebar-width);  /** un-hides header that was behind sidebar due to sidebar property position: fixed */
+}
+
+
+
+/** end of header */
