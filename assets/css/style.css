@@ -261,7 +261,27 @@ body {
 /** header */
 
 .header {
-   margin-left: var(--sidebar-width);  /** un-hides header that was behind sidebar due to sidebar property position: fixed */
+   margin-left: var(--sidebar-width); /** un-hides header that was behind sidebar due to sidebar property position: fixed */
+   height: 100vh;
+   /* background-image: url(../images/header-1.jpeg); */
+   /* background-position: center; */
+   /* background-repeat: no-repeat; */
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(/assets/images/header-1.jpeg) center no-repeat;
+   background-size: cover; /** cover all viewport regardless of zoom value */
+}
+
+.brand {
+   display: flex; /** position brand elements in a row */
+   cursor: pointer;
+}
+
+.hotel-heading {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 2.7ren;
+   font-weight: 400;
+   color: var(--theme-color);
+   letter-spacing: 0.2rem;
 }
 
 
