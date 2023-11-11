@@ -100,10 +100,9 @@ body {
    position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
    width: 40rem;
    height: 100%; /** navbar will strecht across the whole page */
-   background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),
-      url(/assets/images/nav-bg.jpeg);
-   background-position: center;
-   background-repeat: no-repeat;
+   /* background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),url(/assets/images/nav-bg.jpeg); */
+   /* background-position: center; */
+   /* background-repeat: no-repeat; */
 
    background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),
       url("/assets/images/nav-bg.jpeg") center no-repeat; /** shorthand for previous three lines */
@@ -232,7 +231,7 @@ body {
    margin-bottom: 1.5rem;
 }
 
-/** use this CSS combinator: "~" - general sibling selector to dhow navigation */
+/** use this CSS combinator: "~" - general sibling selector to show navigation */
 .checkbox:checked ~ .navigation {
    left: var(--sidebar-width);
 }
@@ -261,12 +260,13 @@ body {
 /** header */
 
 .header {
-   margin-left: var(--sidebar-width); /** un-hides header that was behind sidebar due to sidebar property position: fixed */
+   /** un-hides header that was behind sidebar due to sidebar property position: fixed */
+   margin-left: var(--sidebar-width);
    height: 100vh;
    /* background-image: url(../images/header-1.jpeg); */
    /* background-position: center; */
    /* background-repeat: no-repeat; */
-   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
       url(/assets/images/header-1.jpeg) center no-repeat;
    background-size: cover; /** cover all viewport regardless of zoom value */
 }
@@ -278,12 +278,74 @@ body {
 
 .hotel-heading {
    font-family: "Josefin Sans", sans-serif;
-   font-size: 2.7ren;
+   font-size: 2.7rem;
    font-weight: 400;
    color: var(--theme-color);
    letter-spacing: 0.2rem;
 }
 
+.banner {
+   color: #ddd;
+   height: 65rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
 
+.banner-heading {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 7rem;
+   font-weight: 400;
+   margin-bottom: 0;
+   /** CSS allows animation of HTML elements without using JavaScript or Flash! */
+   /* An animation lets an element gradually change from one style to another. You can change as many CSS properties you want, as many times as you want. To use CSS animation, you must first specify some keyframes for the animation. Keyframes hold what styles the element will have at certain times.*/
+   /** animation properties:
+       animation-name: example;
+       animation-duration: 5s;
+       animation-timing-function: linear;
+       animation-delay: 2s;
+       animation-iteration-count: infinite;
+       animation-direction: alternate; */
+   animation: anim 2s; /** executes animation named "anim" with duration 2 secs */
+}
+
+.banner-paragraph {
+   font-size: 3.5rem;
+   font-weight: 300;
+   /** animation: name duration delay direction */
+   animation: anim 1.5s 0.5s backwards;
+}
+
+.banner-button {
+   width: 21rem;
+   padding: 1.2rem 2rem;
+   font-size: 2rem;
+   color: #333;
+   letter-spacing: 0.1rem;
+   border: none;
+   border-radius: 10rem;
+   outline: none;
+   background: linear-gradient(to right, gold, goldenrod);
+   cursor: pointer;
+   animation: anim 1s 1s backwards;
+}
+
+.banner-button:hover {
+   background: linear-gradient(to left, gold, goldenrod);
+}
+
+.banner-button:active {
+   transform: translateY(0.2rem);
+}
+
+@keyframes anim {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
 
 /** end of header */
