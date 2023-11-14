@@ -100,12 +100,12 @@ body {
    position: fixed; /** to remove space above sidebar (could be done also with margin-top:0 for h1 */
    width: 40rem;
    height: 100%; /** navbar will strecht across the whole page */
-   /* background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),url(../images/nav-bg.jpeg); */
+   /* background-image: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),url(/assets/images/nav-bg.jpeg); */
    /* background-position: center; */
    /* background-repeat: no-repeat; */
 
    background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, 0.8)),
-      url(../images/nav-bg.jpeg) center no-repeat; /** shorthand for previous three lines */
+      url(/assets/images/nav-bg.jpeg) center no-repeat; /** shorthand for previous three lines */
    background-size: cover;
    /** copied from sidebar*/
    display: flex; /* sidebar container is flex*/
@@ -263,11 +263,11 @@ body {
    /** un-hides header that was behind sidebar due to sidebar property position: fixed */
    margin-left: var(--sidebar-width);
    height: 100vh;
-   /* background-image: url(../images/header-1.jpeg); */
+   /* background-image: url(/assets/images/header-1.jpeg); */
    /* background-position: center; */
    /* background-repeat: no-repeat; */
    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
-      url(../images/header-1.jpeg) center no-repeat;
+      url(/assets/images/header-1.jpeg) center no-repeat;
    background-size: cover; /** cover all viewport regardless of zoom value */
 }
 
