@@ -47,7 +47,7 @@ Create a neat and beautiful UI and navigation bar that will showcase use of the 
 
 ## Actual site image
 
-* [Grand Hotel](https://eplp.github.io/grand-hotel-flex-i/assets/css/images/)grandHotel.png)
+* [Grand Hotel](https://eplp.github.io/grand-hotel-flex-i/assets/css/images/grandHotel.png)
 
 
 ## Application Links
